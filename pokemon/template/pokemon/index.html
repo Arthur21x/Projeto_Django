@@ -1,0 +1,24 @@
+{%extends 'template.html'%}
+
+{%block 'pokemon'%}
+{% for i in response.results%}
+         <div id="container">
+            <div class="container-top">
+                <div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{forloop.counter}}.png" width="400px" height="341px">
+                </div>
+            </div>
+        </div>
+        <div id="container2">
+            <div class="container-bottom">
+                <div class="item1">
+                    <button>{{i.name | capfirst}}</button>
+                </div>
+
+                <div class="item2">
+
+                </div>
+            </div>
+        </div>
+{%endfor%}
+{%endblock%}

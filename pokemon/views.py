@@ -1,11 +1,17 @@
 from django.shortcuts import render
+from .models import PokemonInfo
+from django.core.paginator import Paginator
 import requests
 
 
 # Create your views here.
 def index(request):
-    response = requests.get('https://pokeapi.co/api/v2/pokemon').json()
-    return render(request, 'pokemon/index.html', {'response': response})
+    Pokemons = PokemonInfo.objects.all()
+    paginator = Paginator(Pokemons, 25)
+
+    page = request.GET.get('page')
+    Pokemons = paginator.get_page(page)
+    return render(request, 'pokemon/index.html', {'Pokemon': Pokemons})
 
 
 def pokemon(request, identificador):

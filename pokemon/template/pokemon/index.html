@@ -1,24 +1,33 @@
 {%extends 'template.html'%}
 
 {%block 'pokemon'%}
-{% for i in response.results%}
+{% for i in Pokemon%}
          <div id="container">
             <div class="container-top">
                 <div>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{forloop.counter}}.png" width="400px" height="341px">
+                    <img src="{{i.Sprite.official_artwork}}" width="380px" height="321px">
                 </div>
             </div>
         </div>
-        <div id="container2">
-            <div class="container-bottom">
+        <div>
+            <div id = 'container2' class="container-bottom">
                 <div class="item1">
-                    <button>{{i.name | capfirst}}</button>
+                    <button>#{{i.id}} {{i.name | capfirst}}</button>
                 </div>
+                {%include 'partials/_type.html'%}
 
-                <div class="item2">
-
-                </div>
             </div>
         </div>
 {%endfor%}
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+              {%for pagina in Pokemon.paginator.page_range%}
+                {%if Pokemon.number == pagina%}
+                    <li class="page-item active"><a class="page-link" href="?p={{pagina.next_page_number}}">{{pagina}}</a></li>
+                {%else%}
+                    <li class="page-item"><a class="page-link" href="?p={{pagina.next_page_number}}">{{pagina}}</a></li>
+                {%endif%}
+              {%endfor%}
+          </ul>
+        </nav>
 {%endblock%}

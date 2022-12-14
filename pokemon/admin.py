@@ -19,8 +19,13 @@ class TypeAdmin(admin.ModelAdmin):
     list_filter = ('id', 'Type1', 'Type2')
 
 
+class EvolutionAdmin(admin.ModelAdmin):
+    list_display = ('id', 'Evolution1', 'Evolution2', 'Evolution3', 'Evolution4',
+                    'Evolution5', 'Evolution6', 'Evolution7', 'Evolution8', 'Evolution9')
+
+
 admin.site.register(PokemonSprite, SpriteAdmin)
 admin.site.register(PokemonType, TypeAdmin)
 admin.site.register(PokemonAbilitis, AbilitiesAdmin)
-admin.site.register(PokemonEvolution)
+admin.site.register(PokemonEvolution, EvolutionAdmin)
 admin.site.register(PokemonInfo)

@@ -6,6 +6,7 @@ from .models import PokemonSprite, PokemonType, PokemonAbilitis, PokemonEvolutio
 
 class AbilitiesAdmin(admin.ModelAdmin):
     list_display = ('id', 'Ability1', 'Ability2', 'Ability3')
+    list_filter = ('id', 'Ability1', 'Ability2', 'Ability3')
 
 
 class SpriteAdmin(admin.ModelAdmin):
@@ -13,8 +14,13 @@ class SpriteAdmin(admin.ModelAdmin):
                     'front_shiny', 'dream_world', 'official_artwork')
 
 
+class TypeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'Type1', 'Type2')
+    list_filter = ('id', 'Type1', 'Type2')
+
+
 admin.site.register(PokemonSprite, SpriteAdmin)
-admin.site.register(PokemonType)
+admin.site.register(PokemonType, TypeAdmin)
 admin.site.register(PokemonAbilitis, AbilitiesAdmin)
 admin.site.register(PokemonEvolution)
 admin.site.register(PokemonInfo)

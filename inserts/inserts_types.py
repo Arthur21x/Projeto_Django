@@ -7,9 +7,9 @@ for pokemon in range(1, 901):
         type1 = response['types'][0]['type']['name']
         type2 = response['types'][1]['type']['name']
 
-        print(f"INSERT INTO pokemon_pokemonsprite"
+        print(f"INSERT INTO pokemon_pokemontype"
               f" VALUES ('{pokemon}', '{type1}', '{type2}');")
     else:
         type1 = response['types'][0]['type']['name']
-        print(f"INSERT INTO pokemon_pokemonsprite"
-              f" VALUES ('{pokemon}', '{type1}');")
+        print(f"INSERT INTO pokemon_pokemontype"
+              f" VALUES ('{pokemon}', '{type1}', 'NULO');")

@@ -1,9 +1,10 @@
 {% load static %}
 <header>
-        <img src="{% static 'img/pokedex-3d-logo (1).png'%}" alt="logo">
-        <div id="divBusca">
-            <input type="text" id="txtBusca" placeholder="Buscar..."/>
-            <img src="{% static 'img/search.png'%}" id="btnBusca" alt="Buscar"/>
+    <a href="{% url 'index'%}"><img src="{% static 'img/pokedex-3d-logo (1).png'%}" alt="logo"></a>
+        <div id="divBusca" style="margin-left: 40px">
+            <form method="get" action="{%url 'busca'%}">
+                <input type="search" id="txtBusca" placeholder="Buscar..." value="{{request.GET.pokemon}}" name="pokemon"/>
+                    <img src="{% static 'img/search.png'%}" id="btnBusca" alt="Buscar"/>
+            </form>
         </div>
-        {%include 'partials/_style.html'%}
     </header>

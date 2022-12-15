@@ -14,6 +14,11 @@ def index(request):
     return render(request, 'pokemon/index.html', {'Pokemon': Pokemons})
 
 
+def ver_pokemon(request, pokemon_id):
+    pokemon = PokemonInfo.objects.get(name=pokemon_id)
+    return render(request, 'pokemon/pokemon.html', {'Pokemon': pokemon})
+
+
 def busca(request):
     pokemon = request.GET.get('pokemon')
     Pokemons = PokemonInfo.objects.order_by('-id').filter(name=pokemon.lower())
@@ -22,4 +27,3 @@ def busca(request):
     page = request.GET.get('page')
     Pokemons = paginator.get_page(page)
     return render(request, 'pokemon/busca.html', {'Pokemon': Pokemons})
-

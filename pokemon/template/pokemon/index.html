@@ -6,14 +6,14 @@
          <div id="container">
             <div class="container-top">
                 <div>
-                    <img src="{{i.Sprite.official_artwork}}" width="380px" height="321px">
+                    <a href="{% url 'pokemon' pokemon_id=i.id%}"><img src="{{i.Sprite.official_artwork}}" width="380px" height="321px"></a>
                 </div>
             </div>
         </div>
         <div>
             <div id = 'container2' class="container-bottom">
                 <div class="item1">
-                    <button>#{{i.id}} {{i.name | capfirst}}</button>
+                    <a href="{% url 'pokemon' pokemon_id=i.id%}"><button>#{{i.id}} {{i.name | capfirst}}</button></a>
                 </div>
                 {%include 'partials/_type.html'%}
 

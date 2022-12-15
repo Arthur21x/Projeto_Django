@@ -183,3 +183,21 @@ header{
     background-color: #ee99ac;
 }
 
+.column-7 {
+    width: 100%;
+}
+
+.column-7 {
+    float: left;
+    margin-right: -100%;
+    width: 49.22%;
+}
+
+.push-7 {
+    margin: 0;
+}
+
+.push-7 {
+    margin-left: 50.7825%;
+}
+

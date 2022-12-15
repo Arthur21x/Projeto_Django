@@ -15,7 +15,7 @@
                 <div class="item1">
                     <a href="{% url 'pokemon' pokemon_id=i.id%}"><button>#{{i.id}} {{i.name | capfirst}}</button></a>
                 </div>
-                {%include 'partials/_type.html'%}
+                {%include 'partials/_type_index.html'%}
 
             </div>
         </div>

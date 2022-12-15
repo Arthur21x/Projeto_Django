@@ -15,7 +15,7 @@ def index(request):
 
 
 def ver_pokemon(request, pokemon_id):
-    pokemon = PokemonInfo.objects.get(name=pokemon_id)
+    pokemon = PokemonInfo.objects.get(id=pokemon_id)
     return render(request, 'pokemon/pokemon.html', {'Pokemon': pokemon})
 
 

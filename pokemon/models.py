@@ -39,7 +39,7 @@ class PokemonInfo(models.Model):
     order = models.IntegerField()
     weight = models.IntegerField()
     height = models.IntegerField()
-    Evolution = models.ForeignKey(PokemonSprite, on_delete=models.CASCADE, related_name='evolution')
+    Evolution = models.ForeignKey(PokemonEvolution, on_delete=models.CASCADE, related_name='evolution')
     Ability= models.ForeignKey(PokemonAbilitis, on_delete=models.CASCADE, related_name='ability')
     Type = models.ForeignKey(PokemonType, on_delete=models.CASCADE, related_name='type')
     Sprite = models.ForeignKey(PokemonSprite, on_delete=models.CASCADE, related_name='sprite')

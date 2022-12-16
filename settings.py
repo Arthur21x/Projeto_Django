@@ -23,6 +23,7 @@ SECRET_KEY = 'django-insecure-o&b$*(h05u-66f@dof8)22=e5h8snqfu*evvc6z)1x)y4cuag#
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -53,7 +54,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'pokemon/template',
+            'C:/Users/ACER/PycharmProjects/Projeto_pokedex/pokemon/template',
             BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,

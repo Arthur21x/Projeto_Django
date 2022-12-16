@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import PokemonInfo
 from django.core.paginator import Paginator
-import requests
 
 
 # Create your views here.
